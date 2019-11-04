@@ -1,0 +1,26 @@
+{
+  "name": "kds",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sushilcmd/kdsui.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sushilcmd/kdsui/issues"
+  },
+  "homepage": "https://github.com/sushilcmd/kdsui#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "http": "0.0.0",
+    "mongoose": "^5.7.7",
+    "path": "^0.12.7"
+  }
+}

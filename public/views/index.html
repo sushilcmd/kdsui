@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>KDS</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/index.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/screen.css'>
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="mainContainer">
+        <div class="kotContainer">
+            <!-- render all kots -->
+        </div>
+        <div class="footer">
+            <div class="logo"></div>
+            <div class="kotDetails">
+                <div class="detailCol">
+                    <div class="value">105</div>
+                    <div class="label">total order</div>
+                </div>
+                <div class="detailCol">
+                    <div class="value">230</div>
+                    <div class="label">total items</div>
+                </div>
+            </div>
+
+            <div class=" nav history">
+                <img src="../images/history.png" class="icon">
+            </div>
+            <div class=" nav category">
+                <img src="../images/list.png" class="icon">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script type="text/x-jquery-tmpl" id="kotTemplate">
+    {{if items.length>0}}
+    <div class="kot">
+        <div class="overlay ultralight"></div>
+        <div class="overlay light"></div>
+
+        <div class="kotContent">
+            <div class="kotHeader">
+                <div class="col left">
+                    {{if BillType=="Delivery"}}
+                    <img src="../images/delivery-bike.png" class="icon"> {{else BillType=="Swiggy"}}
+                    <img src="../images/swiggy.png" class="icon"> {{else BillType=="Takeaway"}}
+                    <img src="../images/man-walking.png" class="icon"> {{else BillType=="Fine Dining"}}
+                    <img src="../images/dinner-table.png" class="icon"> {{/if}}
+                </div>
+
+                <div class="col centre">{{html FullName}}</div>
+                <div class="col right">1:30</div>
+            </div>
+            <div class="itemsContainer">
+                {{each(i,v) items}}
+                <div class="item">
+                    <div class="qty">{{html i+1}}</div>
+                    <div class="itemName">{{html ItemName}}</div>
+                </div>
+                {{/each}}
+            </div>
+            <div class="kotFooter">
+                <div class="circle left"></div>
+                <div class="orderNo">KOT # {{html BillNo}}</div>
+                <div class="circle right"></div>
+            </div>
+        </div>
+
+    </div>
+    {{/if}}
+</script>
+
+
+<script type="text/javascript" src="../scripts/jquery-3.js"></script>
+<script type="text/javascript" src="../scripts/jquery.tmpl.min.js"></script>
+
+<script type="text/javascript" src="../js/appConfig.js"></script>
+<script type="text/javascript" src="../js/base.js"></script>
+<script type="text/javascript" src="../js/kds.screen.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
+
+</html>
